@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+}
+
+/* Header */
+.header{
+    width: auto;
+    height: 10em;
+    background-color: black;
+    margin: 0;
+    color: white;
+}
+.header header{
+    width: 60em;
+    height: 10em;
+    margin: 0 auto;
+}
+.header h1{
+    position: relative;
+    top: 1em;
+    left: 1em;
+}
+.header h3{
+    position: relative;
+    top: 2em;
+    left: 2.5em;
+}
+
+/* Page */
+.page{
+    width: 60em;
+    height: auto;
+    margin: auto;
+    padding: 0.5em;
+}
+
+/* Article */
+.article{
+    padding: 0.5em;
+}
+.article a{
+    color: blue;
+    text-decoration: none;
+}
+.article time{
+    color: red;
+}
+
+/* Footer */
+.footer{
+    background-color: black;
+    width: auto;
+    height: 10em;
+}
+.footer footer{
+    width: 60em;
+    height: 8.9em;
+    margin: auto;
+}
+.footer .copy-right{
+    width: 60em;
+    height: 1.1em;
+    text-align: center;
+    color: white;
+    margin: auto;
+}
+.subscribe{
+    width: 15em;
+    height: 8.9em;
+    text-align: center;
+    float: right;
+}
+.subscribe input[type=submit]{
+    display: none;
+}
+.subscribe input[type=email]{
+    font-size: 1.2em;
+    text-align: center;
+    color: blue;
+    position: relative;
+    top: 3em;
+    border-radius: 0.3em;
+}
