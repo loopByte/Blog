@@ -44,7 +44,8 @@
                     echo '<br /><br />';
                     echo '<time datetime="'.$article->postdate.'">' . $article->postdate . '</time>';
                     echo '</div>';
-                    echo '<div class="fb-like" data-href="http://'.$_SERVER['SERVER_NAME'].'/index.php?page=article&id='.$_GET['id'].'" data-layout="box_count" data-action="like" data-show-faces="false" data-share="true"></div>';
+                    echo '<div style="float: left" class="fb-like" data-href="http://'.$_SERVER['SERVER_NAME'].'/index.php?page=article&id='.$_GET['id'].'" data-layout="box_count" data-action="like" data-show-faces="false" data-share="true"></div>';
+                    echo '<div style="float: left" class="fb-comments" data-href="http://'.$_SERVER['SERVER_NAME'].'/index.php?page=article&id='.$_GET['id'].'" data-numposts="5" data-colorscheme="light"></div>';
                 break;
             }
         ?>
