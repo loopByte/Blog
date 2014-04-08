@@ -1,20 +1,31 @@
 <?php
 
+    require_once 'config.php';
     require_once 'include/autoload.class.php';
     
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
     <head>
         <title><?=$blog->title?></title>
         <meta charset="utf-8" />
+        <meta name="description" content="<?=$config['description']?>" />
         <link rel="stylesheet" type="text/css" href="style/default/main.css" />
+        <?=$ogp->set()?>
     </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ro_RO/all.js#xfbml=1&appId=730897020268369";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
    <header class="header">
        <header>
-           <h1><?=$blog->title?></h1>
-           <h3><?=$blog->description?></h3>
+           <h1><?=$config['title']?></h1>
+           <h3><?=$config['description']?></h3>
        </header>
    </header>
    <div class="page">
@@ -33,6 +44,7 @@
                     echo '<br /><br />';
                     echo '<time datetime="'.$article->postdate.'">' . $article->postdate . '</time>';
                     echo '</div>';
+                    echo '<div class="fb-like" data-href="http://'.$_SERVER['SERVER_NAME'].'/index.php?page=article&id='.$_GET['id'].'" data-layout="box_count" data-action="like" data-show-faces="false" data-share="true"></div>';
                 break;
             }
         ?>
@@ -46,7 +58,7 @@
                 </form>
             </div>
        </footer>
-       <div class="copy-right">&copy;<?=$blog->title?> 2014</div>
+       <div class="copy-right">&copy;<?=$config['title']?> 2014</div>
    </footer>
 </body>
 </html>
