@@ -38,14 +38,16 @@
                 break;
                 
                 case 'article':
+                    echo '<button onclick="back()">Go back</button>';
+                    echo '<script>function back(){window.history.back()}</script>';
                     echo '<div class="article">';
                     echo '<h1>' . $article->title . '</h1>';
                     echo '<article>' . $article->content . '</article>';
+                    echo '<div style="float: left" class="fb-like" data-href="http://'.$_SERVER['SERVER_NAME'].'/index.php?page=article&id='.$_GET['id'].'" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>';
                     echo '<br /><br />';
                     echo '<time datetime="'.$article->postdate.'">' . $article->postdate . '</time>';
                     echo '</div>';
-                    echo '<div style="float: left" class="fb-like" data-href="http://'.$_SERVER['SERVER_NAME'].'/index.php?page=article&id='.$_GET['id'].'" data-layout="box_count" data-action="like" data-show-faces="false" data-share="true"></div>';
-                    echo '<div style="float: left" class="fb-comments" data-href="http://'.$_SERVER['SERVER_NAME'].'/index.php?page=article&id='.$_GET['id'].'" data-numposts="5" data-colorscheme="light"></div>';
+                    echo '<div style="float: left" class="fb-comments" data-href="http://'.$_SERVER['SERVER_NAME'].'/index.php?page=article&id='.$_GET['id'].'" data-numposts="5" data-colorscheme="light" data-width="960"></div>';
                 break;
             }
         ?>
