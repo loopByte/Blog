@@ -21,8 +21,8 @@
             while($row = $result->fetch_assoc()){
                 $content = $row['content'];
                 if($row['wrap'] == 1){
-                    if(strlen($content) > 1000){
-                        $content = substr($content, 0, 1000);
+                    if(strlen($content) > 3000){
+                        $content = substr($content, 0, 3000);
                         $content .= '<a href="index.php?page=article&id='.$row['id'].'">[Continue reading]</a>';
                     }else{
                         $content = $content;
