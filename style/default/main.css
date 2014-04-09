@@ -6,7 +6,7 @@
 .header{
     width: auto;
     height: 10em;
-    background-color: black;
+    background-color: #1d1d1d; /* darken */
     margin: 0;
     color: white;
 }
@@ -40,16 +40,16 @@
     padding: 0.5em;
 }
 .article a{
-    color: blue;
+    color: #2d89ef; /* blue */
     text-decoration: none;
 }
 .article time{
-    color: red;
+    color: #ee1111; /* red */
 }
 
 /* Footer */
 .footer{
-    background-color: black;
+    background-color: #1d1d1d; /* darken */
     width: auto;
     height: 10em;
 }
@@ -62,7 +62,7 @@
     width: 60em;
     height: 1.1em;
     text-align: center;
-    color: white;
+    color: #ffffff; /* white */
     margin: auto;
 }
 .subscribe{
@@ -77,7 +77,7 @@
 .subscribe input[type=email]{
     font-size: 1.2em;
     text-align: center;
-    color: blue;
+    color: #2d89ef; /* blue */
     position: relative;
     top: 3em;
     border-radius: 0.3em;
