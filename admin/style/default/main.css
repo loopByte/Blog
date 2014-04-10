@@ -29,3 +29,33 @@
     color: #2d89ef; /* blue */
     margin: 0.1em;
 }
+
+/* Page */
+.page{
+    width: 60em;
+    height: auto;
+    margin: auto;
+}
+
+.section{
+    border: 0.1em solid black;
+    width: 18.87em;
+    float: left;
+    margin: 0.5em;
+}
+.section section{
+    background-color: #34495e;
+    color: #bdc3c7;
+    padding: 0.2em;
+}
+.menu{
+    color: #ecf0f1;
+    text-decoration: none;
+    float: left;
+}
+.menu div{
+    background-color: #2980b9;
+    margin: 0.2em;
+    width: 9em;
+    text-align: center;
+}
