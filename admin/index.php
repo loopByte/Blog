@@ -28,7 +28,7 @@
             <section>
                 <h1>Articles</h1>
             </section>
-            <a href="#" class="menu">
+            <a href="new-article.php" class="menu">
                 <div>
                     <h2>New</h2>
                 </div>
