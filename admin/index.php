@@ -21,6 +21,50 @@
     </div>
     <?php }else{ ?>
     
+    <div class="page">
+    
+    <!-- Articles -->
+        <div class="section">
+            <section>
+                <h1>Articles</h1>
+            </section>
+            <a href="#" class="menu">
+                <div>
+                    <h2>New</h2>
+                </div>
+            </a>
+            <a href="#" class="menu">
+                <div>
+                    <h2>Manage</h2>
+                </div>
+            </a>
+        </div>
+    <!-- End Articles -->
+    
+    <!-- Users -->
+        <div class="section">
+            <section>
+                <h1>Users</h1>
+            </section>
+            <a href="#" class="menu">
+                <div>
+                    <h2>New</h2>
+                </div>
+            </a>
+            <a href="#" class="menu">
+                <div>
+                    <h2>Manage</h2>
+                </div>
+            </a>
+            <a href="index.php?action=logout" class="menu">
+                <div>
+                    <h2>Log out</h2>
+                </div>
+            </a>
+        </div>
+    <!-- End Users -->
+        
+    </div>
     
     <?php } ?>
 </body>
