@@ -6,6 +6,7 @@
         public $description;
         public $url;
         public $image;
+        public $keywords;
         
         public function __construct(){}
         
@@ -22,10 +23,11 @@
                 global $config;
                 
                 global $mysqli;
-                $query = "SELECT title FROM articles WHERE id='".$id."'";
+                $query = "SELECT title, tags FROM articles WHERE id='".$id."'";
                 $result = $mysqli->query($query);
                 while($row = $result->fetch_assoc()){
                     $this->title = $row['title'];
+                    $this->keywords = $row['tags'];
                 }
                 $this->type = 'article';
                 $this->description = $config['description'];
@@ -48,6 +50,7 @@
             $ogp .= '<meta property="og:image:type" content="image/png">';
             $ogp .= '<meta property="og:image:width" content="400"/>';
             $ogp .= '<meta property="og:image:height" content="300"/>';
+            $ogp .= '<meta name="keywords" content="'.$this->keywords.'"/>';
             
             return $ogp;
         }
