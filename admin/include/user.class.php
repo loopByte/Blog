@@ -17,6 +17,8 @@
             if(isset($_GET['action']) && $_GET['action'] == 'login'){
                 $this->login();
             }
+            
+            $this->logout();
         }
         
         public function register(){
@@ -32,6 +34,8 @@
                 $query = "INSERT INTO users(username, password, email, fullname, registered)
                     VALUES ('".$username."', '".$password."', '".$email."', '".$fullname."', '".$registered."')";
                 $mysqli->query($query);
+                
+                header("Location: index.php");
             }
         }
         
@@ -56,9 +60,18 @@
                             $this->access = $_SESSION['access'] = $row['access'];
                         }
                     }
+                    
+                    header("Location: index.php");
                 }else{
                     exit("Invalid username or password");
                 }
+            }
+        }
+        
+        public function logout(){
+            if(isset($_GET['action']) && $_GET['action'] == 'logout'){
+                session_destroy();
+                header("Location: index.php");
             }
         }
         
