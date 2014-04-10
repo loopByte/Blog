@@ -50,4 +50,21 @@
                 $this->postdate = $row['postdate'];
             }
         }
+        
+        public static function  add(){
+            if(isset($_GET['action']) && $_GET['action'] == 'new-article'){
+                global $mysqli;
+                
+                $title = $_POST['title'];
+                $content = $_POST['content'];
+                $tags = $_POST['tags'];
+                $postdate = date("Y-m-d H:i:s");
+                $wrap = $_POST['wrap'];
+                
+                $query = "INSERT INTO articles(title, content, postdate, tags, wrap)
+                    VALUES('".$title."', '".$content."', '".$postdate."', '".$tags."', '".$wrap."')";
+                $mysqli->query($query);
+                header("Location: index.php");
+            }
+        }
     }
