@@ -9,6 +9,9 @@
         <title>Admin</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="style/default/main.css" />
+        <link rel="stylesheet" type="text/css" href="../js/jqueryui/css/ui-darkness/jquery-ui-1.10.4.custom.min.css" />
+        <script src="../js/jqueryui/js/jquery-1.10.2.js"></script>
+        <script src="../js/jqueryui/js/jquery-ui-1.10.4.custom.min.js"></script>
     </head>
 <body>
     <?php if(!isset($_SESSION['logged'])){ ?>
