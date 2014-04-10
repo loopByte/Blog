@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
     <head>
-        <title><?=$blog->title?></title>
+        <title><?=$config['title']?></title>
         <meta charset="utf-8" />
         <meta name="description" content="<?=$config['description']?>" />
         <link rel="stylesheet" type="text/css" href="style/default/main.css" />
