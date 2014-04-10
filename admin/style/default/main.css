@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+}
+
+/* Login box */
+.login-box{
+    background-color: #eff4ff; /* light blue */
+    width: 20em;
+    height: auto;
+    padding: 1em;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    top: 10em;
+}
+
+.login-box input[type=text], input[type=password]{
+    width: 16em;
+    height: 2em;
+    font-size: 1em;
+    text-align: center;
+}
+
+.login-box input[type=submit]{
+    font-size: 1.5em;
+}
+
+.login-box input{
+    color: #2d89ef; /* blue */
+    margin: 0.1em;
+}
