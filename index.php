@@ -1,7 +1,10 @@
 <?php
-
-    require_once 'config.php';
-    require_once 'include/autoload.class.php';
+    
+    define('ROOT', dirname(__FILE__));
+    define('DS', DIRECTORY_SEPARATOR);
+    
+    require_once ROOT . DS . 'config.php';
+    require_once ROOT . DS . 'include/autoload.class.php';
     
 ?>
 <!DOCTYPE html>
@@ -55,7 +58,7 @@
    <footer class="footer">
        <footer>
             <div class="subscribe">
-                <form>
+                <form action="index.php?subscribe=true" method="POST">
                     <input type="email" name="email" placeholder="Subscribe" required />
                     <input type="submit" value="Subscribe" />
                 </form>
