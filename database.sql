@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.6
+-- version 3.5.8.1deb1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 11 Apr 2014 la 17:11
--- Server version: 5.6.16
--- PHP Version: 5.5.9
+-- Gazda: localhost
+-- Timp de generare: 13 Apr 2014 la 07:46
+-- Versiune server: 5.5.32-0ubuntu0.13.04.1
+-- Versiune PHP: 5.4.9-4ubuntu2.3
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `blog`
+-- Bază de date: `blog`
 --
 
 -- --------------------------------------------------------
@@ -54,10 +54,9 @@ INSERT INTO `articles` (`id`, `title`, `content`, `postdate`, `tags`, `wrap`) VA
 CREATE TABLE IF NOT EXISTS `newsletter` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(100) NOT NULL,
-  `fullname` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -75,14 +74,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `access` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`,`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Salvarea datelor din tabel `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `fullname`, `registered`, `access`) VALUES
-(1, 'admin', 'milea.vasile959@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'Vasile Milea', '2014-04-10 11:28:37', 3);
+(1, 'admin', 'milea.vasile959@gmail.com', '$2a$07$kfhenffjkh3nvbesbjsdfeQydyLZ1jKjnJxm1agJi7ytJl7UiGLFq', 'Vasile Milea', '2014-04-10 11:28:37', 3),
+(2, 'loopByte', 'milea.vasile959@gmail.com', '$2a$07$kfhenffjkh3nvbesbjsdfeQydyLZ1jKjnJxm1agJi7ytJl7UiGLFq', 'Vasile Milea', '2014-04-13 07:41:57', 3);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
