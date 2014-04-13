@@ -26,7 +26,7 @@
                 global $mysqli;
                 
                 $username = $_POST['username'];
-                $password = $_POST['password'];
+                $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
                 $fullname = $_POST['fullname'];
                 $email = $_POST['email'];
                 $registered = date("Y-m-d H:i:s");
@@ -46,24 +46,29 @@
                 global $mysqli;
                 
                 $username = $_POST['username'];
-                $password = md5($_POST['password']);
+                $query_pass_check = "SELECT pasword FROM users WHERE username='".$username."'";
+                $result_pass_check = $mysqli->query($query_pass_check);
+                $result_pass_check = $result_pass_check->fetch_object();
                 
-                $query = "SELECT id, username, fullname, access FROM users WHERE username='".$username."' AND password='".$password."'";
-                $result = $mysqli->query($query);
-                if($result->num_rows == 1){
-                    while($row = $result->fetch_assoc()){
-                        if($row['access'] == 3){
-                            $_SESSION['logged'] = '1';
-                            $this->id = $_SESSION['id'] = $row['id'];
-                            $this->username = $_SESSION['username'] = $row['username'];
-                            $this->fullname = $_SESSION['fullname'] = $row['fullname'];
-                            $this->access = $_SESSION['access'] = $row['access'];
+                $password = password_verify($_POST['password'], $result_pass_check->password);
+                if($password){
+                    $query = "SELECT id, username, fullname, access FROM users WHERE username='".$username."'";
+                    $result = $mysqli->query($query);
+                    if($result->num_rows == 1){
+                        while($row = $result->fetch_assoc()){
+                            if($row['access'] == 3){
+                                $_SESSION['logged'] = '1';
+                                $this->id = $_SESSION['id'] = $row['id'];
+                                $this->username = $_SESSION['username'] = $row['username'];
+                                $this->fullname = $_SESSION['fullname'] = $row['fullname'];
+                                $this->access = $_SESSION['access'] = $row['access'];
+                            }
                         }
+                        
+                        header("Location: index.php");
+                    }else{
+                        exit("Invalid username or password");
                     }
-                    
-                    header("Location: index.php");
-                }else{
-                    exit("Invalid username or password");
                 }
             }
         }
