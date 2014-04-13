@@ -33,7 +33,7 @@
                     <h2>New</h2>
                 </div>
             </a>
-            <a href="#" class="menu">
+            <a href="manage-article.php" class="menu">
                 <div>
                     <h2>Manage</h2>
                 </div>
