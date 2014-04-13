@@ -32,6 +32,8 @@
                 $mail->Subject = 'Yout subscribe to ' . $config['title'];
                 $mail->Body    = 'This e-mail has been sent to confirm your subscription to our blog newsletter. Please click <a href="'.$link.'" target="_blank">here</a> to confirm.';
                 $mail->send();
+                
+                header("Location: index.php");
             }
         }
         
@@ -63,6 +65,8 @@
                 $mail->Subject = 'Yout subscribe to ' . $config['title'];
                 $mail->Body    = 'Thank you for subscribing to our newsletter. We will e-mail you with updates very soon. Stay tuned!';
                 $mail->send();
+                
+                header("Location: index.php");
             }
         }
     }
