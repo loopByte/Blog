@@ -14,7 +14,7 @@
     top: 10em;
 }
 
-.login-box input[type=text], input[type=password]{
+.login-box #input-login{
     width: 16em;
     height: 2em;
     font-size: 1em;
@@ -58,4 +58,23 @@
     margin: 0.2em;
     width: 9em;
     text-align: center;
+}
+
+/* New article page */
+input[name=title], input[name=tags]{
+    font-size: 1.5em;
+    padding: 0.1em;
+    text-align: left;
+    margin: 0.5em 0 0.5em 0;
+}
+
+input[type=submit]{
+    font-size: 1.2em;
+    margin: 0.5em 0 0 0;
+}
+
+/* New user form */
+#input-register{
+    font-size: 1.5em;
+    margin: 0.2em 0 0.2em 0;
 }
