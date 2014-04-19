@@ -82,3 +82,9 @@
     top: 3em;
     border-radius: 0.3em;
 }
+
+/* Facebook footer plugin */
+.footer footer #facebook{
+    float: left;
+    margin: 0.5em;
+}
