@@ -17,6 +17,7 @@
             $this->login();
             $this->register();
             $this->logout();
+            $this->remove();
             
         }
         
@@ -67,10 +68,79 @@
             }
         }
         
+         public static function manage_list(){
+            global $mysqli;
+            
+            $query = "SELECT id, username, fullname, registered FROM users";
+            $result = $mysqli->query($query);
+            
+            echo '<table border="1" class="manage-article">';
+            echo '<thead>';
+            echo '<tr>';
+            echo '<th>ID</th>';
+            echo '<th>Username</th>';
+            echo '<th>Full name</th>';
+            echo '<th>Registered</th>';
+            echo '<th>Actions</th>';
+            echo '</tr>';
+            echo '</thead>';
+            echo '<tbody>';
+            while($row = $result->fetch_assoc()){
+                echo '<tr>';
+                echo '<td>' . $row['id'] . '</td>';
+                echo '<td>' . $row['username'] . '</td>';
+                echo '<td>' . $row['fullname'] . '</td>';
+                echo '<td>' . $row['registered'] . '</td>';
+                echo '<td>
+                    <a href="edit-user.php?user=edit&id='.$row['id'].'">Edit</a>
+                    <a href="manage-user.php?user=remove&id='.$row['id'].'">Delete</a>
+                </td>';
+                echo '</tr>';
+            }
+            echo '</tbody>';
+            echo '</table>';
+        }
+        
+        public static function remove(){
+            if(isset($_GET['user']) && $_GET['user'] == 'remove'){
+                global $mysqli;
+                
+                $query = "DELETE FROM users WHERE id='".$_GET['id']."'";
+                $mysqli->query($query);
+                header("Location: manage-user.php");
+            }
+        }
+        
         public function logout(){
             if(isset($_GET['action']) && $_GET['action'] == 'logout'){
                 session_destroy();
                 header("Location: index.php");
+            }
+        }
+        
+        public static function edit_fetch(){
+            if(isset($_GET['user']) && $_GET['user'] == 'edit'){
+                global $mysqli;
+                
+                $query = "SELECT id, username, fullname, email, access FROM users WHERE id='".$_GET['id']."'";
+                $result = $mysqli->query($query);
+                return $result->fetch_assoc();
+            }
+        }
+        
+        public static function edit(){
+            if(isset($_GET['user']) && $_GET['user'] == 'edit_save'){
+                global $mysqli;
+                
+                $id = $_POST['id'];
+                $username = $_POST['username'];
+                $email = $_POST['email'];
+                $fullname = $_POST['fullname'];
+                $access = $_POST['access'];
+                
+                $query = "UPDATE users SET username='".$username."', email='".$email."', fullname='".$fullname."', access='".$access."' WHERE id='".$id."'";
+                $mysqli->query($query);
+                header("Location: manage-user.php");
             }
         }
         
