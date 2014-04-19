@@ -57,6 +57,7 @@
    </div>
    <footer class="footer">
        <footer>
+            <div id="facebook" data-colorscheme="dark" class="fb-like" data-href="https://www.facebook.com/webtuts.tk" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
             <div class="subscribe">
                 <form action="index.php?subscribe=true" method="POST">
                     <input type="email" name="email" placeholder="Subscribe" required />
