@@ -14,8 +14,8 @@
     <?php if(!isset($_SESSION['logged'])){ ?>
     <div class="login-box">
         <form action="index.php?action=login" method="POST" >
-            <input type="text" name="username" placeholder="Username" required /><br />
-            <input type="password" name="password" placeholder="Password" required /><br />
+            <input id="input-login" type="text" name="username" placeholder="Username" required /><br />
+            <input id="input-login" type="password" name="password" placeholder="Password" required /><br />
             <input type="submit" value="Log In" /><br />
         </form>
     </div>
@@ -46,12 +46,12 @@
             <section>
                 <h1>Users</h1>
             </section>
-            <a href="#" class="menu">
+            <a href="new-user.php" class="menu">
                 <div>
                     <h2>New</h2>
                 </div>
             </a>
-            <a href="#" class="menu">
+            <a href="manage-user.php" class="menu">
                 <div>
                     <h2>Manage</h2>
                 </div>
